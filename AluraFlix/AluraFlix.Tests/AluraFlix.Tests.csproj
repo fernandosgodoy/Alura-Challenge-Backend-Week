@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AluraFlix.Domain\AluraFlix.Domain.csproj" />
+    <ProjectReference Include="..\AluraFlix.EFPersistence\AluraFlix.EFPersistence.csproj" />
   </ItemGroup>
 
 </Project>
