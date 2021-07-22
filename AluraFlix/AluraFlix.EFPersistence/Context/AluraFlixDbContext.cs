@@ -1,4 +1,5 @@
 ﻿using AluraFlix.Domain;
+using AluraFlix.EFPersistence.Configuration;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,12 @@ namespace AluraFlix.EFPersistence.Context
         }
 
         public DbSet<Video> Videos { get; set; }
+        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration<Video>(new VideoConfiguration());
+        }
 
     }
 }
