@@ -34,7 +34,10 @@ namespace AluraFlix.WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AluraFlix.WebApi", Version = "v1" });
             });
-            services.AddDbContext<AluraFlixDbContext>();
+            services.AddDbContext<AluraFlixDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
