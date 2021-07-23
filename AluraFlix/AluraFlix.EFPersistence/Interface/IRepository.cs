@@ -11,9 +11,9 @@ namespace AluraFlix.EFPersistence.Interface
         where TEntity : EntityBase
     {
         IEnumerable<TEntity> GetAll();
-        TEntity GetById();
-        int Add(TEntity entity);
+        TEntity GetById(int id);
+        bool Add(TEntity entity);
         void Update(TEntity entity);
-        void RemoveById(TEntity entity);
+        void RemoveById(int id);
     }
 }
