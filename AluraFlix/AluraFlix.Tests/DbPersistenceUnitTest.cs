@@ -32,11 +32,46 @@ namespace AluraFlix.Tests
 
             using(var context = new AluraFlixDbContext(this._dbContextOptions))
             {
+                Assert.NotNull(context);
+
                 var videoRepositoryMock = new Mock<VideoRepository>(context);
                 var inserted = videoRepositoryMock.Object.Add(video);
 
                 Assert.True(inserted,
                     "It wasn't possible to insert the video.");
+            }
+        }
+
+        [Fact]
+        public void GivenVideoUpdateEntry_WhenYouNeedToUpdateInformation_ThenTryToUpdateTheVideo()
+        {
+            var video = new Video()
+            {
+                Id = 1,
+                Title = "Star Wars: A Ascensão Skywalker",
+            };
+
+            using (var context = new AluraFlixDbContext(this._dbContextOptions))
+            {
+                Assert.NotNull(context);
+                var videoRepositoryMock = new Mock<VideoRepository>(context);
+                videoRepositoryMock.Object.Update(video);
+            }
+        }
+
+        [Fact]
+        public void GivenVideoId_WhenYouNeedToURemoveIt_ThenTryToDeleteTheVideo()
+        {
+            var video = new Video()
+            {
+                Id = 1
+            };
+
+            using (var context = new AluraFlixDbContext(this._dbContextOptions))
+            {
+                Assert.NotNull(context);
+                var videoRepositoryMock = new Mock<VideoRepository>(context);
+                videoRepositoryMock.Object.RemoveById(video.Id);
             }
         }
 
