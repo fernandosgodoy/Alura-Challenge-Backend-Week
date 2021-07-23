@@ -17,4 +17,8 @@
     <ProjectReference Include="..\AluraFlix.Domain\AluraFlix.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>
