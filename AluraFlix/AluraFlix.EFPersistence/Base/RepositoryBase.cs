@@ -18,6 +18,7 @@ namespace AluraFlix.EFPersistence.Base
         private readonly AluraFlixDbContext _aluraFlixDbContext;
 
         public RepositoryBase(AluraFlixDbContext aluraFlixDbContext)
+            : base()
         {
             this._aluraFlixDbContext = aluraFlixDbContext;
         }
