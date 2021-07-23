@@ -75,5 +75,32 @@ namespace AluraFlix.Tests
             }
         }
 
+        [Fact]
+        public void GivenTheRequestForList_WhenYouAreStarting_ThenTryToRetrieveAllTheVideos()
+        {
+            using (var context = new AluraFlixDbContext(this._dbContextOptions))
+            {
+                Assert.NotNull(context);
+
+                var videoRepositoryMock = new Mock<VideoRepository>(context);
+                var list = videoRepositoryMock.Object.GetAll();
+                Assert.NotNull(list);
+            }
+        }
+
+        [Fact]
+        public void GivenTheRequestVideo_WhenYouAreConsultingAVideo_ThenTryToRetrieveTheVideoById()
+        {
+            var videoId = 1;
+            using (var context = new AluraFlixDbContext(this._dbContextOptions))
+            {
+                Assert.NotNull(context);
+
+                var videoRepositoryMock = new Mock<VideoRepository>(context);
+                var video = videoRepositoryMock.Object.GetById(videoId);
+                Assert.NotNull(video);
+            }
+        }
+
     }
 }
