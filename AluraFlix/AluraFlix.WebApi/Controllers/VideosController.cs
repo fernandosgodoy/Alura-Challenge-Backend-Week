@@ -37,33 +37,48 @@ namespace AluraFlix.WebApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody]Video video)
         {
-            var inserted = _videoService.Insert(video);
-            if (inserted)
-                return Ok();
+            if (ModelState.IsValid)
+            {
+                var inserted = _videoService.Insert(video);
+                if (inserted)
+                    return Ok();
+                else
+                    return StatusCode(500);
+            }
             else
-                return StatusCode(500);
+                return BadRequest();
         }
 
         [Route("{id}")]
         [HttpPut]
         public IActionResult Put([FromRoute]int id, [FromBody] Video video)
         {
-            var updated = _videoService.Update(id,  video);
-            if (updated)
-                return Ok();
+            if (ModelState.IsValid)
+            {
+                var updated = _videoService.Update(id, video);
+                if (updated)
+                    return Ok();
+                else
+                    return StatusCode(500);
+            }
             else
-                return StatusCode(500);
+                return BadRequest();
         }
 
         [Route("{id}")]
         [HttpDelete]
         public IActionResult Delete([FromRoute] int id)
         {
-            var deleted = _videoService.Delete(id);
-            if (deleted)
-                return Ok();
+            if (ModelState.IsValid)
+            {
+                var deleted = _videoService.Delete(id);
+                if (deleted)
+                    return Ok();
+                else
+                    return StatusCode(500);
+            }
             else
-                return StatusCode(500);
+                return BadRequest();
         }
     }
 }
