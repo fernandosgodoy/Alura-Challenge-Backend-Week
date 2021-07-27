@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace AluraFlix.WebApi.Controllers
 {
 
+    [Route("api/{controller}")]
     [ApiController]
     public class VideosController 
         : ControllerBase

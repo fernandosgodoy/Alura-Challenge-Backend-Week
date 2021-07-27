@@ -13,6 +13,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using AluraFlix.EFPersistence.Context;
+using AluraFlix.Services.Applications;
+using AluraFlix.EFPersistence.Repositories;
 
 namespace AluraFlix.WebApi
 {
@@ -38,6 +40,9 @@ namespace AluraFlix.WebApi
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddScoped(typeof(VideoRepository));
+            services.AddScoped(typeof(VideoService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
