@@ -15,7 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AluraFlix.Domain\AluraFlix.Domain.csproj" />
     <ProjectReference Include="..\AluraFlix.EFPersistence\AluraFlix.EFPersistence.csproj" />
+    <ProjectReference Include="..\AluraFlix.Services\AluraFlix.Services.csproj" />
   </ItemGroup>
 
 </Project>
