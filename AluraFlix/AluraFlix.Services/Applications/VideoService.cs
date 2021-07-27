@@ -58,11 +58,12 @@ namespace AluraFlix.Services.Applications
             return _videoRepository.GetAll();
         }
 
-        public bool Update(Video entity)
+        public bool Update(int id, Video entity)
         {
             var updated = false;
             try
             {
+                entity.Id = id;
                 _videoRepository.Update(entity);
                 updated = true;
             }

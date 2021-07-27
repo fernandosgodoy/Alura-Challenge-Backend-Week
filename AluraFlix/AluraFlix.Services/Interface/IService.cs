@@ -11,7 +11,7 @@ namespace AluraFlix.Services.Interface
         IEnumerable<TEntity> ListAll();
         TEntity FindById(int id);
         bool Insert(TEntity entity);
-        bool Update(TEntity entity);
+        bool Update(int id, TEntity entity);
         bool Delete(int id);
     }
 }
