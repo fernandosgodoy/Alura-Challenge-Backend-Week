@@ -3,14 +3,16 @@ using AluraFlix.EFPersistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AluraFlix.EFPersistence.Migrations
 {
     [DbContext(typeof(AluraFlixDbContext))]
-    partial class AluraFlixDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210731015918_TableCategories")]
+    partial class TableCategories
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
