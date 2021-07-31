@@ -42,6 +42,8 @@ namespace AluraFlix.WebApi
             });
 
             services.AddScoped(typeof(VideoRepository));
+            services.AddScoped(typeof(CategoryRepository));
+            services.AddScoped(typeof(CategoryService));
             services.AddScoped(typeof(VideoService));
         }
 
