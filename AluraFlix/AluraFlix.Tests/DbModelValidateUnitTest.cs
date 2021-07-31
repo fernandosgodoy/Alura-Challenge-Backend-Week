@@ -14,6 +14,9 @@ namespace AluraFlix.Tests
         {
             Assert.True(this.CheckHasDefinedPrimaryKey(typeof(Video)), 
                 "Entity doesn't implement the correct model rules.");
+
+            Assert.True(this.CheckHasDefinedPrimaryKey(typeof(Category)),
+                "Entity doesn't implement the correct model rules.");
         }
 
         public bool CheckHasDefinedPrimaryKey(Type source)
