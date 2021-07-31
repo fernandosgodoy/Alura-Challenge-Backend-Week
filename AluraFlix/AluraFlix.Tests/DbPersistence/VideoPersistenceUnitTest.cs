@@ -6,14 +6,14 @@ using AluraFlix.EFPersistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 
-namespace AluraFlix.Tests
+namespace AluraFlix.Tests.DbPersistence
 {
-    public class DbPersistenceUnitTest
+    public class VideoPersistenceUnitTest
     {
 
         private readonly DbContextOptions _dbContextOptions;
 
-        public DbPersistenceUnitTest()
+        public VideoPersistenceUnitTest()
         {
             this._dbContextOptions = new DbContextOptionsBuilder<AluraFlixDbContext>()
                 .UseInMemoryDatabase(databaseName: "AluraFlixTests")
